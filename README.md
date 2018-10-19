@@ -25,7 +25,39 @@ If you dont use ES6/7/8/x, use unpkg file
 
 [https://unpkg.com/@thadeu/network-informations/dist/network-informations.min.js](https://unpkg.com/@thadeu/network-informations/dist/network-informations.min.js)
 
-## Usage
+### Usage
+
+```html
+<script src="https://unpkg.com/@thadeu/network-informations/dist/network-informations.min.js"></script>
+```
+
+```js
+var network = networkInformations
+
+network.withConnectionStats(function(stats) {
+  var infos = network.localCandidateAttributes(stats.result())
+  console.log(infos)
+})
+```
+
+results
+
+```json
+{
+  "candidateType": "host",
+  "ipAddress": IP_NUMER,
+  "networkType": "wlan",
+  "portNumber": "9",
+  "priority": "1518280447",
+  "stunKeepaliveRequestsSent": "0",
+  "stunKeepaliveResponsesReceived": "0",
+  "stunKeepaliveRttSquaredTotal": "0",
+  "stunKeepaliveRttTotal": "0",
+  "transport": "tcp"
+}
+```
+
+## Usage with ES6+ feature import
 
 ### localCandidateAttributes
 
@@ -43,7 +75,7 @@ it results something as
 ```json
 {
   "candidateType": "host",
-  "ipAddress": "192.168.1.3",
+  "ipAddress": IP_NUMER,
   "networkType": "wlan",
   "portNumber": "9",
   "priority": "1518280447",
