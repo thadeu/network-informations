@@ -6,7 +6,7 @@
 ![Minified+Gzip size](http://img.badgesize.io/thadeu/network-informations/master/dist/network-informations.min.js.svg?compression=gzip&label=min%2Bgzip+size)
 ![License: MIT](https://img.shields.io/npm/l/@thadeu/network-informations.svg)
 
-Console.log out of the box.
+Get the client network informations cross-plataform, included network type, local ip address, port number and more
 
 # Instalation
 This lib is available as a NPM package. To install it, use the following command:
@@ -40,16 +40,16 @@ it results something as
 
 ```json
 {
-  candidateType: "host"
-  ipAddress: "192.168.1.3"
-  networkType: "wlan"
-  portNumber: "9"
-  priority: "1518280447"
-  stunKeepaliveRequestsSent: "0"
-  stunKeepaliveResponsesReceived: "0"
-  stunKeepaliveRttSquaredTotal: "0"
-  stunKeepaliveRttTotal: "0"
-  transport: "tcp"
+  "candidateType": "host",
+  "ipAddress": "192.168.1.3",
+  "networkType": "wlan",
+  "portNumber": "9",
+  "priority": "1518280447",
+  "stunKeepaliveRequestsSent": "0",
+  "stunKeepaliveResponsesReceived": "0",
+  "stunKeepaliveRttSquaredTotal": "0",
+  "stunKeepaliveRttTotal": "0",
+  "transport": "tcp"
 }
 ```
 
@@ -66,32 +66,32 @@ it results something as
 
 ```json
 {
-  candidateType: "host"
-  googActualEncBitrate: "0"
-  googAvailableReceiveBandwidth: "0"
-  googAvailableSendBandwidth: "0"
-  googBucketDelay: "0"
-  googComponent: "1"
-  googDerBase64: ""
-  googFingerprint: ""
-  googFingerprintAlgorithm: "sha-256"
-  googInitiator: "true"
-  googRetransmitBitrate: "0"
-  googTargetEncBitrate: "0"
-  googTransmitBitrate: "0"
-  ipAddress: "192.168.1.3"
-  label: "webrtchacks"
-  localCertificateId: ""
-  networkType: "wlan"
-  portNumber: "9"
-  priority: "1518280447"
-  protocol: ""
-  state: "connecting"
-  stunKeepaliveRequestsSent: "0"
-  stunKeepaliveResponsesReceived: "0"
-  stunKeepaliveRttSquaredTotal: "0"
-  stunKeepaliveRttTotal: "0"
-  transport: "tcp"
+  "candidateType": "host",
+  "googActualEncBitrate": "0",
+  "googAvailableReceiveBandwidth": "0",
+  "googAvailableSendBandwidth": "0",
+  "googBucketDelay": "0",
+  "googComponent": "1",
+  "googDerBase64": "",
+  "googFingerprint": "",
+  "googFingerprintAlgorithm": "sha-256",
+  "googInitiator": "true",
+  "googRetransmitBitrate": "0",
+  "googTargetEncBitrate": "0",
+  "googTransmitBitrate": "0",
+  "ipAddress": "192.168.1.3",
+  "label": "webrtchacks",
+  "localCertificateId": "",
+  "networkType": "wlan",
+  "portNumber": "9",
+  "priority": "1518280447",
+  "protocol": "",
+  "state": "connecting",
+  "stunKeepaliveRequestsSent": "0",
+  "stunKeepaliveResponsesReceived": "0",
+  "stunKeepaliveRttSquaredTotal": "0",
+  "stunKeepaliveRttTotal": "0",
+  "transport": "tcp"
 }
 ```
 
