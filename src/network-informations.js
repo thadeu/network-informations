@@ -4,17 +4,6 @@ export function withConnectionStats(callback, peerConnection){
   if (!peerConnection){
     var RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
 
-    if (!RTCPeerConnection) {
-      var iframe = document.getElementById('iframe');
-      
-      if (!iframe) {
-        return;
-      }
-
-      var win = iframe.contentWindow;
-      RTCPeerConnection = win.RTCPeerConnection || win.mozRTCPeerConnection || win.webkitRTCPeerConnection;
-    }
-
     peerConnection = new RTCPeerConnection(null);
     peerConnection.createDataChannel('webrtchacks');
 
