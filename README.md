@@ -1,10 +1,10 @@
-# logger-storage
+# network-informations
 
-[![NPM package version](https://img.shields.io/npm/v/@thadeu/logger-storage.svg)](https://www.npmjs.com/package/@thadeu/logger-storage)
-[![Build Status](https://travis-ci.org/thadeu/logger-storage.svg?branch=master)](https://travis-ci.org/thadeu/logger-storage)
-![Minified size](http://img.badgesize.io/thadeu/logger-storage/master/dist/logger-storage.min.js.svg?label=min+size)
-![Minified+Gzip size](http://img.badgesize.io/thadeu/logger-storage/master/dist/logger-storage.min.js.svg?compression=gzip&label=min%2Bgzip+size)
-![License: MIT](https://img.shields.io/npm/l/@thadeu/logger-storage.svg)
+[![NPM package version](https://img.shields.io/npm/v/@thadeu/network-informations.svg)](https://www.npmjs.com/package/@thadeu/network-informations)
+[![Build Status](https://travis-ci.org/thadeu/network-informations.svg?branch=master)](https://travis-ci.org/thadeu/network-informations)
+![Minified size](http://img.badgesize.io/thadeu/network-informations/master/dist/network-informations.min.js.svg?label=min+size)
+![Minified+Gzip size](http://img.badgesize.io/thadeu/network-informations/master/dist/network-informations.min.js.svg?compression=gzip&label=min%2Bgzip+size)
+![License: MIT](https://img.shields.io/npm/l/@thadeu/network-informations.svg)
 
 Console.log out of the box.
 
@@ -12,129 +12,91 @@ Console.log out of the box.
 This lib is available as a NPM package. To install it, use the following command:
 
 ```bash
-npm install @thadeu/logger-storage --save
+npm install @thadeu/network-informations --save
 ```
 
 If you're using Yarn (and you should):
 
 ```bash
-yarn add @thadeu/logger-storage
+yarn add @thadeu/network-informations
 ```
 
 If you dont use ES6/7/8/x, use unpkg file
 
-[https://unpkg.com/@thadeu/logger-storage/dist/logger-storage.min.js](https://unpkg.com/@thadeu/logger-storage/dist/logger-storage.min.js)
-
-# API
-
-* sync -> start process
-* logger -> save to localStorage
-* all -> get all logs
-* filter -> filter logs
-* logs -> filter only logs
-* errors -> filter only errors
-* warns -> filter only warns
-* infos -> filter only infos
-* clear -> clear storage
-
-## .sync({ ...options })
-
-#### auto_start
-
-Type: `Boolean`
-
-Default: true
-
-#### reloadClear
-
-Type: `Boolean`
-
-Default: true
-
-#### only
-
-Type: `Array`
-
-Default: ['error', 'info', 'log', 'warn']
+[https://unpkg.com/@thadeu/network-informations/dist/network-informations.min.js](https://unpkg.com/@thadeu/network-informations/dist/network-informations.min.js)
 
 ## Usage
 
-```js
-import * as LoggerStorage from '@thadeu/logger-storage'
-```
+### localCandidateAttributes
 
 ```js
-LoggerStorage.sync({
-  only: ['error']
+withConnectionStats(stats => {
+  let attributes = localCandidateAttributes(stats.result())
+  console.log(attributes)
 })
 ```
 
-## Get all logs
+it results something as
+
+```json
+{
+  candidateType: "host"
+  ipAddress: "192.168.1.3"
+  networkType: "wlan"
+  portNumber: "9"
+  priority: "1518280447"
+  stunKeepaliveRequestsSent: "0"
+  stunKeepaliveResponsesReceived: "0"
+  stunKeepaliveRttSquaredTotal: "0"
+  stunKeepaliveRttTotal: "0"
+  transport: "tcp"
+}
+```
+
+### allAttributes
 
 ```js
-LoggerStorage.all().then((items) => {
-  console.log(items)
+withConnectionStats(stats => {
+  let attributes = allAttributes(stats.result())
+  console.log(attributes)
 })
 ```
 
-## Get only logs
+it results something as
 
-```js
-LoggerStorage.logs().then((items) => {
-  console.log(items)
-})
+```json
+{
+  candidateType: "host"
+  googActualEncBitrate: "0"
+  googAvailableReceiveBandwidth: "0"
+  googAvailableSendBandwidth: "0"
+  googBucketDelay: "0"
+  googComponent: "1"
+  googDerBase64: ""
+  googFingerprint: ""
+  googFingerprintAlgorithm: "sha-256"
+  googInitiator: "true"
+  googRetransmitBitrate: "0"
+  googTargetEncBitrate: "0"
+  googTransmitBitrate: "0"
+  ipAddress: "192.168.1.3"
+  label: "webrtchacks"
+  localCertificateId: ""
+  networkType: "wlan"
+  portNumber: "9"
+  priority: "1518280447"
+  protocol: ""
+  state: "connecting"
+  stunKeepaliveRequestsSent: "0"
+  stunKeepaliveResponsesReceived: "0"
+  stunKeepaliveRttSquaredTotal: "0"
+  stunKeepaliveRttTotal: "0"
+  transport: "tcp"
+}
 ```
 
-## Get only errors
-
-```js
-LoggerStorage.errors().then((items) => {
-  console.log(items)
-})
-```
-
-## Get only warns
-
-```js
-LoggerStorage.warns().then((items) => {
-  console.log(items)
-})
-```
-
-## Get only infos
-
-```js
-loggerStorage.infos().then((items) => {
-  console.log(items)
-})
-```
-
-## Logger manually
-
-```js
-LoggerStorage.sync({
-  auto_start: false
-})
-
-LoggerStorage.logger('testing with logger storage', {
-  type_event: 'log', // 'error', 'info', 'log', 'warn'
-  timestamp: new Date()
-  // others custom attributes
-})
-```
-
-## Clear all logs
-```js
-LoggerStorage.clear()
-```
 
 ## Do you developer?
-
-**starting project**
-
-```js
-npm run start
-```
 
 **watching tests**
 

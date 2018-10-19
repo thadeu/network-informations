@@ -1,20 +1,21 @@
 const path = require('path');
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+
 let filename;
 let plugins = [];
 let mode;
 
 if (process.env.NODE_ENV === "production") {
   mode = "production";
-  filename = "logger-storage.min.js";
+  filename = "network-informations.min.js";
   plugins.push(new UglifyJSPlugin({ sourceMap: true }));
 } else {
   mode = "development";
-  filename = "logger-storage.js";
+  filename = "network-informations.js";
 }
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/logger-storage.js"),
+  entry: path.resolve(__dirname, "src/network-informations.js"),
   devtool: "source-map",
   target: "web",
   node: {
@@ -24,7 +25,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: filename,
-    library: "loggerStorage"
+    library: "networkInformations"
   },
   module: {
     rules: [

@@ -1,24 +1,24 @@
 {
-  "name": "@thadeu/logger-storage",
-  "version": "0.1.7",
-  "description": "console.log out of the box, send to localStorage easily",
+  "name": "@thadeu/network-informations",
+  "version": "0.0.1",
+  "description": "Get the client network informations cross-plataform",
   "keywords": [
-    "console",
-    "logger-storage",
-    "logger storage",
-    "export log",
-    "log chrome"
+    "network",
+    "network information",
+    "network type",
+    "network wlan lan",
+    "chrome network type",
+    "webrtc network type"
   ],
   "author": "Thadeu Esteves Jr",
-  "main": "dist/logger-storage.js",
-  "module": "src/logger-storage.js",
+  "main": "dist/network-informations.js",
+  "module": "src/network-informations.js",
   "files": [
     "src/**/*",
     "dist/**/*",
     "README.md"
   ],
   "scripts": {
-    "start": "webpack-dev-server --progress --mode development --watch-content-base --config webpack.config.dev.js",
     "build:minified": "env NODE_ENV=production ./node_modules/.bin/webpack --mode production",
     "build:expanded": "./node_modules/.bin/webpack",
     "build": "npm run build:minified && npm run build:expanded",
@@ -27,10 +27,9 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "setupFiles": [
-      "./config/setupTests.js",
-      "./config/browserMocks.js"
-    ],
+    "verbose": false,
+    "testURL": "http://localhost/",
+    "setupFiles": [],
     "testMatch": [
       "<rootDir>/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/__spec__/**/*.{js,jsx,mjs}",
@@ -42,7 +41,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thadeu/logger-storage.git"
+    "url": "git+https://github.com/thadeu/network-informations.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -53,8 +52,9 @@
     "babel-preset-stage-2": "^6.24.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^22.4.3",
+    "jest": "^22.4.4",
     "jsdom": "^11.10.0",
+    "puppeteer": "^1.9.0",
     "snap-shot": "^2.17.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.8.0",
@@ -62,12 +62,10 @@
     "webpack-dev-server": "^3.1.4"
   },
   "bugs": {
-    "url": "https://github.com/thadeu/logger-storage/issues"
+    "url": "https://github.com/thadeu/network-informations/issues"
   },
-  "homepage": "https://github.com/thadeu/logger-storage#readme",
+  "homepage": "https://github.com/thadeu/network-informations#readme",
   "dependencies": {
-    "localforage": "^1.7.1",
-    "localforage-getitems": "^1.4.2",
-    "localforage-startswith": "^1.4.0"
+    "lodash": "^4.17.11"
   }
 }
