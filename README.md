@@ -30,6 +30,8 @@ If you dont use ES6/7/8/x, use unpkg file
 ### localCandidateAttributes
 
 ```js
+import { withConnectionStats, localCandidateAttributes } from '@thadeu/network-informations'
+
 withConnectionStats(stats => {
   let attributes = localCandidateAttributes(stats.result())
   console.log(attributes)
@@ -56,6 +58,8 @@ it results something as
 ### allAttributes
 
 ```js
+import { withConnectionStats, allAttributes } from '@thadeu/network-informations'
+
 withConnectionStats(stats => {
   let attributes = allAttributes(stats.result())
   console.log(attributes)
@@ -95,6 +99,16 @@ it results something as
 }
 ```
 
+If you have an connection legacy, should be use
+
+```js
+import { withConnectionStats, localCandidateAttributes } from '@thadeu/network-informations'
+
+withConnectionStats(stats => {
+  let attributes = localCandidateAttributes(stats.result())
+  console.log(attributes)
+}, myPeerConnectionLegacy)
+```
 
 ## Do you developer?
 
